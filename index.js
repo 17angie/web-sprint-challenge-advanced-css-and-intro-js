@@ -225,20 +225,29 @@ console.log(artists[2].bio);
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
-    /* code here */
-  }
+function getArtistByIndex(array, num) {
   
+   return `The artist at index ${num} is ${array[num].name}.`
+  }
+
+  console.log(getArtistByIndex(artists,0));
+  
+
   /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
-
-  /* Code here */
-
+function get20s(birthRange){
+  const nameOfArtist = []; 
+  for (i = 0; i < birthRange ; i++) {
+    if(artists[i].years.substr(0,4) < 2001 && 1899 < artists[i].years.substr(0,4)) {
+     nameOfArtist.push(artists[i].name);
+     return nameOfArtist.toString(); 
+    }
+  }
 }
+console.log(get20s(1900 && 2000));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -251,9 +260,11 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(remove, num) {
+  artists.splice(num,1);
+    return artists.length();
   }
+  console.log(removeArtist(artists,0))
   
   /**
 
